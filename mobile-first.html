@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>MOBILE-FIRST</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+           @import url('https://fonts.googleapis.com/css2?family=Alice&family=Carter+One&family=Rubik+Moonrocks&family=Sacramento&display=swap');
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+        }
+          body{
+            background-color:rgb(0, 39, 33);
+          }
+        
+        nav{
+          display: flex;
+          height: 80px;
+          width: 100%;
+          background:rgb(0, 39, 33);
+          align-items: center;
+          justify-content: space-between;
+          padding: 0px 50px 0 100px;
+          flex-wrap: wrap;
+        }
+        nav .logo{
+          color: #FCCF17;
+          font-size: 85px;
+          font-family: 'Sacramento';
+        }
+        nav ul{
+          display: flex;
+          flex-wrap: wrap;
+          list-style: none;
+          z-index:1; /*To hide content overlapping the nav*/
+        }
+        nav ul li{
+          margin: 0 5px;
+        }
+        
+        nav ul li a{
+          color: #FCCF17;
+          text-decoration: none;
+          font-family: 'Alice';
+          font-size: 18px;
+          font-weight: 500;
+          padding: 8px 15px;
+          border-radius: 5px;
+          letter-spacing: 1px;
+          transition: all 0.3s ease;
+          border-bottom:1px solid white;
+        }
+        
+        nav ul li a:hover{
+            background-color:#FCCF17;
+            color: rgb(0, 39, 33);
+            transform: scale3d(1.9);
+            transform: translateY(-7px);
+            box-shadow: rgba(0, 0, 0, 0.4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgb(34, 128, 115) 0 -3px 0 inset;
+        }
+        nav .menu-btn i{
+          color: #efffa5;
+          font-size: 22px;
+          cursor: pointer;
+          display: none;
+        }
+
+        input[type="checkbox"]{
+          display: none;
+        }
+        @media (max-width: 1061px){
+          nav{
+            padding: 0px 40px 0 50px;
+          }
+        }
+
+        @media (max-width: 991px) {
+          nav .logo{
+                position:relative;
+            left:50%;
+            transform: translate(-50%);
+          font-size: 70px;
+        }
+          nav .menu-btn i{
+            display: block;
+          }
+          #click:checked ~ .menu-btn i:before{
+            content: "\f00d";
+          }
+          nav ul{
+            position: fixed;
+            top: 93px;
+            left: -100%;
+            background: rgb(0, 39, 33);
+            height: 100vh;
+            width: 100%;
+            text-align: center;
+            display: block;
+            transition: all 0.5s ease;
+          }
+          #click:checked ~ ul{
+            left: 0;
+          }
+          nav ul li{
+            width: 100%;
+            margin: 50px 0;
+          }
+          nav ul li a{
+            width: 100%;
+            margin-left: -100%;
+            margin-top:0px;
+            display: block;
+            font-size: 20px;
+            border-bottom:none;
+            /* transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); */
+          }
+          #click:checked ~ ul li a{
+            margin-left: 0px;
+          }
+          
+          nav ul li a:hover{
+            background: none;
+            transform: scale3d(1.9);
+            transform: translateY(-4px);
+            box-shadow: none;
+            color: #FCCF17;
+            border:none;
+          }
+        }
+
+
+        
+        .main {
+            margin-top:1px;
+            /* border: rgb(255, 240, 240) 7px ridge; */
+            /* box-shadow:20px 20px 15px black;  */
+            font-family: 'Oswald', sans-serif;
+            /* margin: auto; */
+            padding: 0px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+overflow-x: hidden;
+        }
+
+        #showcase {
+            background-image: url("fun.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            height: 350px;
+            width: 100%;
+            margin-top: 1px;
+            animation: hithere 1s ease infinite;
+            overflow-x: hidden;
+            
+}
+
+@keyframes hithere {
+  30% { transform: scale(1.2); }
+  40%, 60% { transform: rotate(-20deg) scale(1.2); }
+  50% { transform: rotate(20deg) scale(1.2); }
+  70% { transform: rotate(0deg) scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+        #landing-text {
+            color: white;
+            display: block;
+            text-align: center;
+            padding: 10px;
+            margin: 0px;
+        }
+
+        #landing-text h2 {
+            padding: 5px;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        #landing-text h3 {
+            padding: 5px;
+            font-size: 30px;
+        }
+
+        #landing-text p {
+            line-height: 1rem;
+            font-size: 15px;
+        }
+        #landing-images {
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        #landing-images h1 {
+            margin-top: 2px;
+            font-family: fantasy;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+
+        #images {
+            background-color: #FCCF17;
+            /* box-shadow:-10px -20px 15px black; */
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            border: rgb(255, 240, 240) 7px ridge;
+            display: block;
+            padding: 0px;
+            overflow-x:hidden;
+        }
+
+        #images img {
+            /* border: white 5px ridge;
+            animation: animate linear 3s infinite;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            max-width: max-content; */
+            background-image: url("drinks.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        border-top: white 5px ridge;
+        border-bottom: white 5px ridge;
+        animation: animate linear 3s infinite;
+            /* height: 400px; */
+            width: 405px;
+            /* width: 100%; */
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translate(-5%, -5%)skewY(7deg);
+            }
+
+            50% {
+                transform: translate(-5%, -5%)skewY(-7deg);
+            }
+
+            100% {
+                transform: translate(-5%, -5%)skewY(7deg);
+            }
+        }
+
+        #images h2 {
+            font-style: italic;
+            font-size: 20px;
+            margin-bottom:32px;
+            color:rgb(0, 81, 69);
+        }
+#images p{
+  color:rgb(0, 30, 26);
+  font-size: 19px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: 'Alice';
+  /* font-weight:300; */
+}
+        #main-footer {
+            border: 5px solid black;
+            font-family: 'Roboto', sans-serif;
+            color: black;
+            text-align: center;
+            padding: 0px;
+            background-color: #FCCF17;
+            border: rgb(255, 240, 240) 7px ridge;
+            box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+
+        #main-footer h3 {
+            font-size: 30px;
+            text-decoration: underline;
+        }
+
+        #main-footer p {
+            font-weight: bolder;
+        }
+
+        #sub-footer {
+            border: 5px solid black;
+            text-align: center;
+            padding: 10px;
+            background-color: orange;
+        }
+.header{
+        padding:0;
+        color: #FCCF17;
+        text-align: center;
+        font-size: 65px;
+        margin-top: 10PX;
+        text-shadow: 2px 2px 4px #000000;
+        letter-spacing: 4PX;
+        font-family:'Sacramento';
+        /* transform: rotateZ('50'); */
+}
+
+nav ul li a:focus {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+nav ul li a:hover {
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgb(34, 128, 115) 0 -3px 0 inset; */
+  transform: scale3d(1.9);
+            transform: translateY(-4px);
+            /* background-color: #FCCF17; */
+            color:rgb(54, 116, 15);
+            border-bottom: none;
+}
+#header h1{
+    color:#dfd8b7;
+    font-size: 20px;
+    font-family: 'monospace';
+    text-transform:none;
+    text-decoration: none;
+    margin-top:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+.logo::selection{
+  color:aqua;
+} 
+nav ul li a::selection{
+  color:aqua;
+}
+
+#header h1::selection{
+  color:aqua;
+}
+#header h1::first-line{
+  color:#ffe600;}
+
+  #images h2::selection{
+color:rgb(162, 1, 140);
+  }
+  #images p::selection{
+color:rgb(203, 7, 167);
+  }
+  #images img::selection{
+    color:transparent;
+  }
+  #images br::selection{
+    color:transparent;
+  }
+        </style>
+   </head>
+   <body><div><br>
+      <nav>
+         <div class="logo">
+            Drinks
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a class="act" href="index.html">RESPONSIVE</a></li>
+            <li><a href="Fixed.html">FIXED</a></li>
+            <li><a href="Fluid.html">FLUID</a></li>
+            <li><a href="Adaptive.html">ADAPTIVE</a></li>
+            <li><a href="mobile-first.html">MOBILE-FIRST</a></li><br>
+         </ul>
+      </nav></div>
+      <div class=main><br><br>
+        <div id="showcase">
+        </div>
+        <div id="landing-images">
+            <div id="header">
+                <h1>If you are looking for fresh, corlourful and fruity drinks which are refreshing and perfect for the summer, look no further! Here are top 5 go-to summer drinks which are super easy to make at home and perfect for this scorching weather. All of these drinks are non-alcoholic. <br>Let the summer drink season begin!<br><br>
+
+                </h1>
+            </div>
+            <div id="images">
+                <h2>1. LEMON ICED TEA</h2>
+                <img src="orange.jpg" width="300px"><br><BR>
+                <p>For lemon iced tea, start by adding water in a saucepan and cook with tea leaves and sugar for 4-5 mins. Strain and let it cool. To assemble, add ice cubes, strained tea mixture, lemon juice, 4-5 mint leaves and lemon slices. </p><br><br>
+                <h2>2. WATERMELON MOJITO</h2>
+                <img src="watermelon.jpg" width="300px"><br><br>
+                <p>For watermelon mojito, start by blending freshly cut watermelon to get some juice. Muddle mint leaves on the side. To assemble, add ice cubes, lemon juice, muddled mint, lemon slices, sugar and watermelon juice. Give it a good mix. </p><br><br>
+                <h2>3. MANGO LASSI</h2>
+                <img src="mango.jpg" width="300px"><br><br>
+                <p>For mango lassi, in a blender add homemade dahi, fresh mango cubes, sugar, cardamom powder and ice cubes. Blend until everything comes together. </p><br><br>
+                <h2>4. MOHABBAT KA SHARBAT</h2>
+                <img src="rose.jpg" width="300px"><br><br>
+                <p>For mohabbat ka sharbat, in a bowl combine milk, sugar, rose syrup and freshly cut watermelon cubes. </p><br><br>
+                <h2>5. PAAN MILKSHAKE</h2>
+                <img src="paan.jpg" width="300px"><br><br>
+                <p>For paan milkshake, in a blender add ice cubes, milk, whole paan, saunf or fennel seeds, desiccated coconut, vanilla ice cream and green food colour.
+                </p><br>
+            </div>
+        </div>
+        </div>
+   </body>
+</html>

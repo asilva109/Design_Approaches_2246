@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>RESPONSIVE- INDEX FILE</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:400i,600,700,800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Alice&family=Carter+One&family=Rubik+Moonrocks&family=Sacramento&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(0, 30, 26);
+}
+.menu-container{
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index:1; /*To hide content overlapping the nav*/
+}
+.button{
+  position: relative;
+  background: #ffd52b;
+  color: rgb(0, 30, 26);
+  font-size: 24px;
+  padding: 8px 20px;
+  width: 90%;
+  font-family: 'Alice';
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: width .4s;
+  z-index:1; /*To hide content overlapping the nav*/
+}
+
+.button::selection{
+  color:rgb(255, 104, 232);
+}
+.button.expand{
+  width: 95%;
+  z-index:1; /*To hide content overlapping the nav*/
+}
+.fas.expand:before{
+  content: '\f00d';
+}
+ul{
+  list-style: none;
+  position: absolute;
+  top: 65px;
+  display: block;
+  color: rgb(0, 30, 26);
+  background: #ffd52b;
+  font-family: 'Alice';
+  width: 95%;
+  text-align: center;
+  border-radius: 5px;
+  display: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  z-index:1; /*To hide content overlapping the nav*/
+}
+ul:before{
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: #ffd52b;
+  top: -10px;
+  right: 15px;
+  transform: rotate(45deg);
+  z-index:1; /*To hide content overlapping the nav*/
+}
+ul li{
+  line-height: 35px;
+  padding: 8px 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  
+}
+ul li:last-child{
+  border-bottom: none;
+}
+ul li:hover:first-child{
+  border-radius: 5px 5px 0 0;
+}
+ul li:hover:last-child{
+  border-radius: 0 0 5px 5px;
+}
+ul li a{
+  color: rgb(0, 30, 26);
+  font-size: 18px;
+  text-decoration: none;
+  font-family: 'Alice';
+}
+ul li:hover a{
+  color: rgb(0, 140, 147);
+}
+
+.ui{
+    margin-top:300px;
+}
+
+section{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    width: 95%;
+    /* border: rgb(255, 240, 240) 8px ridge; */
+    margin-top: 150px;
+    margin-bottom: 20px;
+}
+
+section .card{
+    position: relative;
+    width: 320px;
+    height:320px;
+    margin: 20px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+section .card .box{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    transform-style: preserve-3d;
+    transition : 1s ease;
+}
+
+
+section .card:hover .box{
+transform: rotateY(180deg);
+}
+
+section .card .box .imgbx{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+section .card .box .imgbx img{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+section .card .box .contentbx{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    background-color:#ffd52b;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+section .card .box .contentbx div{
+transform-style: preserve-3d;
+padding: 20px;
+background:linear-gradient(45deg,rgb(0, 2, 2),rgb(254, 229, 0));
+transform: translatez(100px);
+}
+
+section .card .box .contentbx div h2{
+color:rgb(0, 0, 0);
+text-align: center;
+font-size: 20px;
+letter-spacing: 1px;
+}
+section .card .box .contentbx div h2::selection{
+  color:rgb(0, 2, 142);
+}
+section .card .box .contentbx div p{
+    color:aliceblue;
+    font-size: 16px;
+}
+section .card .box .contentbx div p::selection{
+  color:rgb(29, 247, 251);
+}
+.introp{
+    color:#dfd8b7;
+    font-size: 20px;
+    font-family: 'Alice';
+    text-transform:none;
+    text-decoration: none;
+    text-align: center;
+    /* margin-top: 10px; */
+    WIDTH:85%;
+}
+.header{
+        padding-left:10px;
+        padding-right: 10px;
+        color: #ffd52b;
+        text-align: center;
+        margin-top:-150px;
+        WIDTH:100%;
+        font-size: 63px;
+        text-shadow: 2px 2px 4px #000000;
+        letter-spacing: 4PX;
+        font-family:'Sacramento';
+        /* transform: rotateZ('50'); */
+}
+.header::selection{
+  color:rgb(255, 104, 232);
+}
+u{
+  color:rgb(230, 230, 73);
+}
+u::selection{
+  color:rgb(255, 104, 232);
+}
+.introp::first-line{
+  color:rgb(95, 255, 255);
+}
+.introp::selection{
+  color:rgb(255, 104, 232);
+}
+.container-sun{
+  text-align:center;
+  width:100%;
+  margin-top:-50px;
+  padding-bottom: 10px;
+}
+/* the svg element */
+.svg-sun{
+  width:150px;
+  height:150px;
+
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: 50% 50%;
+  -o-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin:50% 50%;
+
+-webkit-animation: spin 25s linear infinite, sun-glow 3s 0s linear infinite;
+-moz-animation: spin 25s linear infinite, sun-glow 3s 0s linear infinite;
+-o-animation:spin 25s linear infinite, sun-glow 3s 0s linear infinite;
+-ms-animation: spin 25s linear infinite, sun-glow 3s 0s ease-in-out infinite;
+animation: spin 25s linear infinite,sun-glow 3s 0s linear infinite;
+
+}
+/* the circle element in the svg itself */
+#sun{
+  stroke-width:18;
+  stroke-dasharray:2;
+  stroke-dashoffset:2;
+  animation: bounce-in 2s ease infinite;
+}
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% { transform: scale(.9); }
+  100% { transform: scale(1); }
+}
+/* animation for the sun glowing effect */
+@-webkit-keyframes sun-glow { 
+	0% { fill: #f1c40f; stroke:#f1c40f;}
+	50% { fill: #e67e22; stroke:#e67e22;}
+	100% { fill: #f1c40f; stroke:#f1c40f;}
+}
+@-moz-keyframes sun-glow { 
+	0% { fill: #f1c40f; stroke:#f1c40f;}
+	50% { fill: #e67e22; stroke:#e67e22;}
+	100% { fill: #f1c40f; stroke:#f1c40f;}
+}
+@-o-keyframes sun-glow { 
+	0% { fill: #f1c40f; stroke:#f1c40f;}
+	50% { fill: #e67e22; stroke:#e67e22;}
+	100% { fill: #f1c40f; stroke:#f1c40f;}
+}
+@-ms-keyframes sun-glow { 
+	0% { fill: #f1c40f; stroke:#f1c40f;}
+	50% { fill: #e67e22; stroke:#e67e22;}
+	100% { fill: #f1c40f; stroke:#f1c40f;}
+}
+@keyframes sun-glow { 
+	0% { fill: #f1c40f; stroke:#f1c40f;}
+	50% { fill: #e67e22; stroke:#e67e22;}
+	100% { fill: #f1c40f; stroke:#f1c40f;}
+}
+      </style>
+   </head>
+   <body>
+      <div class="menu-container">
+         <div class="button">
+            MENU BAR
+            <span class="fas fa-bars"></span>
+         </div>
+         <ul>
+            <li><a href="index.html">RESPONSIVE</a></li>
+            <li><a href="Fixed.html">FIXED</a></li>
+            <li><a href="Fluid.html">FLUID</a></li>
+            <li><a href="Adaptive.html">ADAPTIVE</a></li>
+            <li><a href="mobile-first.html">MOBILE-FIRST</a></li>
+         </ul>
+      </div>
+      <script>
+         $(document).ready(function(){
+           $('.button').click(function(){
+             if($(this).hasClass('expand')){
+               $('ul').slideUp(function(){
+                 $('.button').removeClass('expand');
+                 $('.fas').removeClass('expand')
+               });
+             }else{
+               $(this).addClass('expand');
+               setTimeout(function(){
+                 $('.fas').addClass('expand');
+                 $('ul').stop().slideDown();
+               },200);
+             }
+           });
+         });
+      </script>
+      <section>
+        <p class="header">Health Tips</p><br><br><br><br><div class="container-sun">
+          <svg class="svg-sun" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+          <circle cx="50" cy="50" r="35" id="sun"></circle>
+          </svg>
+          </div>
+        <p class=introp >Summer is here! A change of season calls for a change in routine, a revamped diet, and of course, a new exercise regimen that suits the weather. <u>Hover</u> over the images to learn more about the simple summer health tips that will help you make the most of the summer season without compromising on your health. Also, checkout the colour of the <u>selected text</u>. </p></P>
+        <div class="card">
+            <div class="box">
+                <div class="imgbx">
+                    <img src="sunscreen.jpg">
+                </div>
+                <div class="contentbx">
+                    <div>
+                        <h2>Wear Sunscreen</h2>
+                        <p>Apply sunscreen before going outdoors and re-apply every 2 hours to protect your skin from the sun and to avoid getting sunburns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="box">
+                <div class="imgbx">
+                    <img src="Summer-Drinks.png">
+                </div>
+                <div class="contentbx">
+                    <div>
+                        <h2>Choose the right liquids</h2>
+                        <p>Try to avoid hot and hard drinks and drink enough water. Choose refreshing drinks like juices and stay hydrated.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="box">
+                <div class="imgbx">
+                    <img src="girl.jpg">
+                </div>
+                <div class="contentbx">
+                    <div>
+                        <h2>Stay fit</h2>
+                        <p>Engage in refreshing outdoor activities such as swimming, yoga, walking etc to keep your body and mind aligned. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="box">
+                <div class="imgbx">
+                    <img src="food.jpg">
+                </div>
+                <div class="contentbx">
+                    <div>
+                        <h2>Eat healthy</h2>
+                        <p> Enrich your diet with healthy fruits, vegetables and good amount of healthy lean protein. Avoid spicy food.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="box">
+                <div class="imgbx">
+                    <img src="vacation.jpg">
+                </div>
+                <div class="contentbx">
+                    <div>
+                        <h2>Give yourself a break</h2>
+                        <p>Taking time off from work, even for a long weekend, allows body to replenish and repair itself. Give your family and yourself that much needed vacation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="box">
+                <div class="imgbx">
+                    <img src="sleep.jpeg">
+                </div>
+                <div class="contentbx">
+                    <div>
+                        <h2>Sleep well</h2>
+                        <p> Pay attention towards developing a good sleep cycle by keeping the same bedtime and wake-up schedule.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </section>
+   </body>
+</html>

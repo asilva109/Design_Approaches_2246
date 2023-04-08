@@ -1,0 +1,480 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Can be avoided-->
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Alice&family=Carter+One&family=Rubik+Moonrocks&family=Sacramento&display=swap');
+
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            margin: auto;
+        }
+body{
+    overflow-x: hidden;
+    FONT-FAMILY:'Alice';
+            background-color:rgb(0, 39, 33);
+}
+        header {
+            /* padding:10px; */
+            /* padding: 10px; */
+            /* margin-top: 10px; */
+            padding-top: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: #FCCF17;
+            text-align: center;
+            font-size: 66px;
+            text-shadow: 2px 2px 4px #000000;
+            letter-spacing: 4PX;
+            font-family: 'Sacramento';
+            transform: rotateZ('50');
+            word-spacing: 20px;
+            background-color:  rgb(0, 30, 26);
+            margin-bottom:0px;
+        }
+        
+        nav {
+            /* margin-left:0; */
+            /* margin-bottom:0; */
+            /* margin: 0 auto; */
+            padding: 5px;
+            background-color:  rgb(0, 30, 26);
+            font-family: 'Alice';
+        }
+
+        
+.wrapper {
+	margin: 0 auto;
+    MARGIN-TOP:-40PX;
+	max-width: 960px;
+	padding: 1px;
+border: 5px solid rgb(0, 30, 26);
+}
+
+.flex-container a {
+	/* background-color:rgb(0, 39, 33); */
+	color:#FCCF17;
+	display: inline-block;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	width: 100%;
+    font-size: 16px;
+            font-family: 'Alice';
+            padding: 15px;
+            border-radius: 12px;
+}
+
+
+.flex-container {
+	border: 1px solid rgb(0, 30, 26);
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	min-width: 100px;
+}
+
+.flex-container li{
+	flex: 3;
+}
+
+.flex-container a:hover{
+
+            transform: scale3d(1.9);
+            transform: translateY(-7px);
+            background-color:#FCCF17;
+            color: rgb(0, 39, 33);
+            box-shadow: rgba(0, 0, 0, 0.4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgb(34, 128, 115) 0 -3px 0 inset;
+}
+
+        main {
+            display: flex;
+        }
+
+        aside {
+            background: rgb(249, 255, 198);
+            flex: 1 0 35%;
+            padding: 10px;
+            /* border:3px dotted rgb(21, 139, 12); */
+        }
+
+        section {
+            background: rgb(195, 255, 248);
+            bottom: 0;
+            flex: 1 0 65%;
+            padding: 0px;
+            position: relative;
+            width: 100%;
+            border: rgb(212, 212, 0) ridge 6px;
+            /* border:3px double rgb(131, 95, 3); */
+            /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+
+            overflow-x: hidden;
+        }
+
+        footer {
+            padding: 10px;
+            background: rgb(0, 30, 26);
+            color:#f3eed5;
+            text-align: center;
+            font-family: 'Alice';
+            font-size: 16px;
+            word-spacing: 4px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        section .waves {
+            position: relative;
+            bottom: 0;
+            margin-left: 0;
+        }
+
+        section .waves .wave {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            background: url(wave2.png);
+            background-size: 1000px 100px;
+        }
+
+        section .waves .wave#wave1 {
+            opacity: 1;
+            bottom: 0;
+            z-index: 1000;
+            animation: animate 8s linear infinite;
+        }
+
+        section .waves .wave#wave2 {
+            opacity: 0.5;
+            bottom: 10px;
+            z-index: 999;
+            animation: animate2 2s linear infinite;
+        }
+
+        section .waves .wave#wave3 {
+            opacity: 0.2;
+            bottom: 15px;
+            z-index: 998;
+            animation: animate2 5s linear infinite;
+        }
+
+        section .waves .wave#wave4 {
+            opacity: 0.7;
+            bottom: 20px;
+            z-index: 999;
+            animation: animate2 6s linear infinite;
+        }
+        @keyframes animate {
+            0% {
+                background-position-x: 1000px;
+            }
+
+            100% {
+                background-position-x: 0px;
+            }
+        }
+
+        @keyframes animate2 {
+            0% {
+                background-position-x: 0px;
+            }
+
+            100% {
+                background-position-x: 1000px;
+            }
+        }
+
+        .island {
+            position: relative;
+            left: 70%;
+            /* transform: translateX(-50%); */
+            width: 580px;
+            margin-bottom: 15px;
+        }
+
+        .sun {
+            width: 100%;
+            /*iMP to allign in centre*/
+            margin-left: 100px;
+            margin-bottom: 450px;
+            width: 200px;
+            height: 200px;
+            background-color: #FFDE00;
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 20px #FFDE0080,
+                0 0 0 40px #FFDE0040,
+                0 0 0 60px #FFDE0020,
+                0 0 0 80px #FFDE0010,
+                0 0 0 100px #FFDE0000,
+                0 0 40px 100px #FFDE0010;
+            animation:
+                sunrise 2s infinite linear forwards,
+                rays 2s 2s infinite linear;
+        }
+
+        @keyframes sunrise {
+            0% {
+                box-shadow: none;
+            }
+        }
+
+        @keyframes rays {
+            0% {
+                box-shadow:
+                    0 0 0 0 #FFDE0080,
+                    0 0 0 20px #FFDE0080,
+                    0 0 0 40px #FFDE0040,
+                    0 0 0 60px #FFDE0020,
+                    0 0 0 80px #FFDE0010,
+                    0 0 40px 100px #FFDE0010;
+            }
+
+            100% {
+                box-shadow:
+                    0 0 0 20px #FFDE0080,
+                    0 0 0 40px #FFDE0040,
+                    0 0 0 60px #FFDE0020,
+                    0 0 0 80px #FFDE0010,
+                    0 0 0 100px #FFDE0000,
+                    0 0 40px 100px #FFDE0010;
+            }
+        }
+
+        .island {
+            position: absolute;
+            left: 65%;
+            transform: translateX(-50%);
+            width: 600px;
+            bottom:-15px;
+        }
+
+        .sun {
+            width: 100%;
+            /*iMP to allign in centre*/
+            margin-left: 150px;
+            margin-bottom: 70px;
+            width: 200px;
+            height: 200px;
+            background-color: #FFDE00;
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 20px #FFDE0080,
+                0 0 0 40px #FFDE0040,
+                0 0 0 60px #FFDE0020,
+                0 0 0 80px #FFDE0010,
+                0 0 0 100px #FFDE0000,
+                0 0 40px 100px #FFDE0010;
+            animation:
+                sunrise 2s infinite linear forwards,
+                rays 2s 2s infinite linear;
+        }
+
+        @keyframes sunrise {
+            0% {
+                box-shadow: none;
+            }
+        }
+
+        @keyframes rays {
+            0% {
+                box-shadow:
+                    0 0 0 0 #FFDE0080,
+                    0 0 0 20px #FFDE0080,
+                    0 0 0 40px #FFDE0040,
+                    0 0 0 60px #FFDE0020,
+                    0 0 0 80px #FFDE0010,
+                    0 0 40px 100px #FFDE0010;
+            }
+
+            100% {
+                box-shadow:
+                    0 0 0 20px #FFDE0080,
+                    0 0 0 40px #FFDE0040,
+                    0 0 0 60px #FFDE0020,
+                    0 0 0 80px #FFDE0010,
+                    0 0 0 100px #FFDE0000,
+                    0 0 40px 100px #FFDE0010;
+            }
+        }
+
+        footer img {
+            width: 300px;
+            /* padding-left:20px;
+            padding-right: 20px; */
+            display:block;
+            margin-left: auto;
+            margin-right: auto;
+            
+    animation: hithere 1s ease infinite;
+}
+@keyframes hithere {
+  30% { transform: scale(1.2); }
+  40%, 60% { transform: rotate(-20deg) scale(1.2); }
+  50% { transform: rotate(20deg) scale(1.2); }
+  70% { transform: rotate(0deg) scale(1.2); }
+  100% { transform: scale(1); }
+}
+        @media screen and (max-width:800px) {
+    .column{
+        flex: 30%;
+        max-width: 30%;
+    }
+    #share {
+    display: none;
+  }
+}
+
+@media screen and (max-width:447px) {
+    .column{
+        flex: 100%;
+        max-width: 100%;
+    }
+    .flex-container li{
+		flex: 2;
+			min-width: 100%;
+	}
+}
+
+footer a{
+    font-size: 19px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color:aqua;
+    line-height: 1.5;
+}
+
+footer a:hover{
+    color: rgb(250, 88, 88);
+}
+footer a:active{
+    color: rgb(241, 123, 251);
+}
+
+footer a:visited{
+    color:orange;
+}
+
+input[type="text"]{
+    width:60%;
+    padding:20px;
+    height:60px;
+    font-size: 15px;
+    border:8px double rgb(141, 141, 0);
+}
+input[type="text"]:focus{
+    background-color:rgb(238, 255, 81);
+    color:rgb(0, 0, 0);
+    font-size:17px;
+}
+
+.disable:disabled{
+   background-color: rgb(63, 37, 37);
+   border:3px solid white;
+   color:rgb(0, 0, 0);
+   font-size:15px;
+}
+
+footer p::first-letter{
+    color:yellow;
+    font-size:29px;
+}
+
+header p::selection{
+  color:rgb(34, 218, 255);
+}
+
+footer p::selection{
+    color:#36ffee;
+}
+br::selection{
+    color:#36ffee;
+}
+
+footer::selection{
+    color:rgb(56, 211, 246);
+}
+footer a::selection{
+    color:rgb(56, 211, 246);
+}
+footer img::selection{
+    color:transparent;
+}
+u{
+    color:yellow;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+u::selection{
+    color:aqua;
+}
+section img::selection{
+    color: transparent;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <p>Vacation Time</p>
+        </header>
+<nav><br><br>
+        <div class="wrapper">
+            
+              <ul class="flex-container">
+                <li><a href="index.html">RESPONSIVE </a></li>
+                <li><a href="Fixed.html">FIXED</a></li>
+                <li><a href="Fluid.html">FLUID</a></li>
+                <li><a href="Adaptive.html">ADAPTIVE</a></li>
+                <li><a href="mobile-first.html">MOBILE-FIRST</a></li>
+        
+          </div>
+</nav>
+        <main>
+            <section><br><br><br><br><br><br><br>
+                <div class="sun"></div>
+                <br><br><br><br><br>
+
+                <br>
+                <br>
+                <br>
+                <div class="waves">
+                    <img src="isl.png" class="island">
+                    <div class="wave" id="wave1"></div>
+                    <div class="wave" id="wave2"></div>
+                    <div class="wave" id="wave3"></div>
+                    <div class="wave" id="wave4"></div>
+                </div>
+
+            </section>
+        </main>
+
+        <footer><br>
+            <p>The first thing that strikes one's mind on hearing the word “summer” is that of vacations. <br><br>Check out the LINKS below: <u>(Check out the unvisted, hovered, active, visited links)</u></p>
+            <br>
+                <img src="bus.png">
+            1. Turn The 2023 Vacation Mode On with the:<BR>
+            <a href="https://traveltriangle.com/blog/best-summer-holiday-destinations-in-the-world/" target="_blank">35
+                Best Summer Holiday Destinations In The World</a>
+            <br><br>
+            2. For best travel and money saving tips::<BR>
+            <a href="https://ordinarytraveler.com/best-travel-tips" target="_blank">Money saving tips</a>
+            <br><br>
+            3. For packing tips:<BR>
+            <a href="https://ordinarytraveler.com/best-travel-tips" target="_blank">Packing tips</a>
+            <br><br>
+            <input type="text" placeholder="Which link was useful?"><br><br>
+            <input type="text" class="disable" placeholder="Was it boring to read?" disabled><br><br>
+        </footer>
+    </div>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>ADAPTIVE</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+           @import url('https://fonts.googleapis.com/css2?family=Alice&family=Carter+One&family=Rubik+Moonrocks&family=Sacramento&display=swap');
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+        }
+          body{
+            background-color:rgb(0, 39, 33);
+          }
+        
+          .camera{
+  width: 100%;
+  text-align:center;
+}
+
+.camera img{
+  width: 200px;
+  animation: bounce-in-right 2s ease infinite;
+}
+
+@keyframes bounce-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-30px);
+  }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+
+          .note{
+          width:100%;
+          color:#e9e500;
+          font-family: 'Sacramento';
+          font-size: 35px;
+          text-align: center;
+          letter-spacing: 2px;
+          word-spacing: 7px;
+        }
+
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0px 10px;
+        }
+
+        .column{
+            flex:25%;
+            max-width: 25%;
+            padding: 0px 4px;
+        }
+        
+        .column img{
+            margin-top: 8px;
+            vertical-align:middle;
+            width: 100%;
+            transition: transform .2s;
+            
+        }
+ .column img:hover{
+  box-shadow:rgba(63, 213, 237, 0.3) 0px 19px 38px, rgba(98, 153, 255, 0.22) 0px 15px 12px;
+  border:7px ridge rgb(107, 182, 36);
+ }
+
+
+
+        nav{
+          display: flex;
+          height: 80px;
+          width: 100%;
+          background:rgb(0, 39, 33);
+          align-items: center;
+          justify-content: space-between;
+          padding: 0px 50px 0 100px;
+          flex-wrap: wrap;
+        }
+        nav .logo{
+          color: #FCCF17;
+          font-size: 85px;
+          font-family: 'Sacramento';
+        }
+        nav ul{
+          display: flex;
+          flex-wrap: wrap;
+          list-style: none;
+          z-index:1; /*To hide content overlapping the nav*/
+        }
+        nav ul li{
+          margin: 0 5px;
+        }
+        
+        nav ul li a{
+          color: #FCCF17;
+          text-decoration: none;
+          font-family: 'Alice';
+          font-size: 18px;
+          font-weight: 500;
+          padding: 8px 15px;
+          border-radius: 5px;
+          letter-spacing: 1px;
+          transition: all 0.3s ease;
+          border-bottom:1px solid rgb(255, 255, 255);
+        }
+        
+        nav ul li a:hover{
+            background-color:#FCCF17;
+            color: rgb(0, 39, 33);
+            transform: scale3d(1.9);
+            transform: translateY(-7px);
+        }
+        nav .menu-btn i{
+          color: #efffa5;
+          font-size: 22px;
+          cursor: pointer;
+          display: none;
+        }
+
+        input[type="checkbox"]{
+          display: none;
+        }
+
+
+        /*MEDIA QUERIES*/
+        @media (max-width: 1000px){
+            nav .logo{
+          font-size: 70px;
+        
+        }
+          nav{
+            padding: 0px 40px 0 50px;
+          }
+          .column{
+        flex: 50%;
+        max-width: 50%;
+    }
+    
+    #share {
+    display: none;
+  }
+
+  .camera img{
+  width: 150px;
+
+}
+.column img{
+  border:3px dotted rgb(0, 207, 0);
+}
+.column img:hover{
+  border:3px dotted rgb(0, 207, 0);
+}
+
+        }
+        @media (max-width: 920px) {
+
+            
+          nav .logo{
+                position:relative;
+            left:50%;
+            transform: translate(-50%);
+          font-size: 65px;
+        }
+          nav .menu-btn i{
+            display: block;
+          }
+          #click:checked ~ .menu-btn i:before{
+            content: "\f00d";
+          }
+          nav ul{
+            position: fixed;
+            top: 120px;
+            left: -100%;
+            background: rgb(0, 39, 33);
+            height: 100vh;
+            width: 100%;
+            text-align: center;
+            display: block;
+            transition: all 0.5s ease;
+          }
+          #click:checked ~ ul{
+            left: 0;
+          }
+          nav ul li{
+            width: 100%;
+            margin: 50px 0;
+          }
+          nav ul li a{
+            width: 100%;
+            margin-left: -100%;
+            margin-top:0px;
+            display: block;
+            font-size: 20px;
+            border: none;
+            /* transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); */
+          }
+          #click:checked ~ ul li a{
+            margin-left: 0px;
+          }
+          
+          nav ul li a:hover{
+            background: none;
+            transform: scale3d(1.9);
+            transform: translateY(-4px);
+            /* background-color: #FCCF17; */
+            color:rgb(247, 255, 194);
+            text-shadow: #FCCF17;
+          }
+
+          .camera img{
+  width: 120px;
+  
+}
+
+.note{
+          width:100%;
+          color:#e9e500;
+          font-family: 'Sacramento';
+          font-size: 21px;
+          padding-left:10px;
+          padding-right: 10px;
+          letter-spacing: 2px;
+          word-spacing: 4px;
+        }
+        .column{
+        flex: 100%;
+        max-width: 100%;
+    }
+    .flex-container li{
+		flex: 1;
+			min-width: 100%;
+	}
+
+  .column img{
+
+border:10px double rgb(161, 188, 39);
+}
+.column img:hover{
+border:10px double rgb(161, 188, 39);
+}
+
+}
+
+.logo::selection{
+  color:aqua;
+}
+
+.camera img::selection{
+  color:transparent;
+}
+.note::selection{
+  color:aqua;
+}
+   .column img::selection{
+    color:transparent;
+   }    
+   nav ul li a::selection{
+    color:aqua;
+   }
+</style></head>
+
+<body><div><br>
+    <nav>
+       <div class="logo">
+          Gallery
+       </div>
+       <input type="checkbox" id="click">
+       <label for="click" class="menu-btn">
+       <i class="fas fa-bars"></i>
+       </label>
+       <ul>
+          <li><a class="act" href="index.html">Responsive</a></li>
+          <li><a href="Fixed.html">Fixed</a></li>
+          <li><a href="Fluid.html">Fluid</a></li>
+          <li><a href="Adaptive.html">Adaptive</a></li>
+          <li><a href="mobile-first.html">Mobile-First</a></li><br>
+       </ul>
+    </nav></div>
+<br><br>
+      <div class="camera"> <img src="camera.png">
+        </div><br><div class=" note">Check out this Vibrant Summer Gallery.</div>
+        <div class="row">
+            <div class="column">
+                <img src="9.jpg">
+                <img src="2.jpeg">
+            </div>
+            <div class="column">
+                <img src="3.jpg">
+                <img src="33.jpg">
+            </div>
+            <div class="column">
+                <img src="6.jpg">
+                <img src="34.jpeg">
+            </div>
+            <div class="column">
+                <img src="32.jpeg">
+                <img src="21.jpg">
+            </div>
+        </div>
+        <br><br>
+
+
+
+    </body></html>
